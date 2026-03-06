@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>OfficeHaven — Infrastructure, Hardware, Product & Software Development</title>
+<meta name="description" content="OfficeHaven delivers end-to-end technology solutions — infrastructure setup, IT hardware on lease or purchase, custom software development, and product development from ideation to launch."/>
+<meta name="keywords" content="infrastructure solutions, IT hardware, software development, product development, refurbished hardware, cloud infrastructure, custom software, Chennai"/>
+<meta property="og:title" content="OfficeHaven — Infrastructure, Hardware, Product & Software Development"/>
+<meta property="og:description" content="End-to-end technology solutions — infrastructure, IT hardware, custom software, and product development for businesses across India."/>
+<meta property="og:type" content="website"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%231d4ed8'/><text x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-weight='bold' font-size='18' fill='white'>OH</text></svg>"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#ffffff;--bg2:#f8f9fb;--bg3:#f1f3f7;
+  --surface:#ffffff;--surface2:#f4f5f8;
+  --ink:#111827;--ink2:#1f2937;
+  --muted:#4b5563;--muted2:#6b7280;
+  --line:#e5e7eb;--line2:#d1d5db;
+  --accent:#1d4ed8;--accent2:#2563eb;--accent-light:#eff3ff;--accent-glow:rgba(29,78,216,.08);
+  --green:#059669;--red:#dc2626;
+  --radius:10px;
+}
+.skip-link{position:absolute;top:-100%;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;padding:.6rem 1.5rem;border-radius:0 0 8px 8px;font-size:.82rem;font-weight:600;z-index:9999;text-decoration:none;transition:top .2s}
+.skip-link:focus{top:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;height:64px;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);transition:box-shadow .3s}
+nav.scrolled{box-shadow:0 1px 8px rgba(0,0,0,.06)}
+.nav-logo{font-weight:800;font-size:1.2rem;letter-spacing:-.03em;text-decoration:none;color:var(--ink);cursor:pointer}
+.nav-logo span{color:var(--accent)}
+.nav-links{display:flex;gap:2rem;list-style:none;align-items:center}
+.nav-links a{font-size:.84rem;font-weight:500;color:var(--muted);text-decoration:none;transition:color .2s;cursor:pointer}
+.nav-links a:hover,.nav-links a.active{color:var(--ink)}
+.nav-btn{background:var(--accent)!important;color:#fff!important;padding:.48rem 1.3rem!important;border-radius:8px!important;font-weight:600!important;font-size:.82rem!important;transition:all .2s!important}
+.nav-btn:hover{background:var(--accent2)!important;transform:translateY(-1px)!important;box-shadow:0 4px 12px rgba(29,78,216,.2)!important}
+.ham{display:none;flex-direction:column;gap:4px;cursor:pointer;background:none;border:none;padding:6px}
+.ham span{width:18px;height:1.5px;background:var(--ink);border-radius:2px;display:block}
+
+/* PAGE */
+.page{display:none;min-height:100vh;opacity:0;transform:translateY(12px);transition:opacity .4s ease,transform .4s ease}
+.page.active{display:block}
+.page.active.show{opacity:1;transform:none}
+main.page.active.show{display:block}
+
+/* ========= HOME ========= */
+#home{background:var(--bg)}
+.home-inner{padding:100px 5vw 0;max-width:1260px;margin:0 auto}
+
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;padding-bottom:4rem}
+
+.badge{display:inline-flex;align-items:center;gap:.45rem;padding:.35rem .9rem;background:var(--accent-light);border:1px solid rgba(29,78,216,.12);border-radius:100px;font-size:.7rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--accent);margin-bottom:1.6rem}
+.badge-dot{width:5px;height:5px;border-radius:50%;background:var(--green);box-shadow:0 0 6px var(--green)}
+
+.hero-title{font-size:clamp(2.6rem,4.5vw,4.2rem);font-weight:800;line-height:1.1;letter-spacing:-.04em;color:var(--ink);margin-bottom:1.6rem}
+.hero-title .ital{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:var(--accent)}
+.hero-title .sub-line{display:block;font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;font-size:.46em;color:var(--muted);letter-spacing:0;margin-top:.5rem}
+
+.hero-desc{font-size:.95rem;color:var(--muted);font-weight:500;line-height:1.8;max-width:440px;margin-bottom:2rem;text-align:justify}
+.hero-acts{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:2rem}
+.btn-primary{background:var(--accent);color:#fff;padding:.78rem 1.8rem;border-radius:8px;font-weight:600;font-size:.86rem;border:none;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:.4rem;transition:all .2s}
+.btn-primary:hover{background:var(--accent2);transform:translateY(-1px);box-shadow:0 6px 20px rgba(29,78,216,.2)}
+.btn-ghost{background:var(--bg);color:var(--ink);padding:.78rem 1.8rem;border-radius:8px;font-weight:500;font-size:.86rem;border:1px solid var(--line);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:.4rem;transition:all .2s}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px)}
+
+.hero-chips{display:flex;flex-wrap:wrap;gap:.4rem}
+.chip{padding:.32rem .85rem;background:var(--bg2);border:1px solid var(--line);border-radius:6px;font-size:.72rem;font-weight:500;color:var(--muted);transition:all .2s;cursor:default}
+.chip:hover{background:var(--accent-light);border-color:rgba(29,78,216,.15);color:var(--accent)}
+
+
+/* Stats */
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.st{padding:2rem 2.2rem;border-right:1px solid var(--line);position:relative;transition:background .25s}
+.st:last-child{border-right:none}
+.st:hover{background:var(--accent-light)}
+.st-num{font-size:2.2rem;font-weight:800;letter-spacing:-.04em;color:var(--ink);line-height:1;font-variant-numeric:tabular-nums}
+.st-num sup{font-size:.8rem;vertical-align:super;color:var(--accent)}
+.st-lbl{font-size:.75rem;color:var(--muted);margin-top:.35rem;font-weight:500}
+
+
+/* ========= ABOUT ========= */
+#about{padding:80px 5vw 60px;background:var(--bg2)}
+.about-inner{max-width:1260px;margin:0 auto}
+
+.ab-hero{display:grid;grid-template-columns:1.1fr 1fr;gap:5rem;align-items:center;margin-bottom:4.5rem}
+.eyebrow{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.8rem}
+.sec-title{font-size:clamp(2rem,3.2vw,3rem);font-weight:800;letter-spacing:-.04em;line-height:1.12;color:var(--ink);margin-bottom:1.4rem}
+.sec-title .ital{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:var(--accent)}
+.ab-body{font-size:.92rem;color:var(--muted);font-weight:500;line-height:1.8;margin-bottom:1rem;text-align:justify}
+.ab-body strong{font-weight:700;color:var(--ink)}
+
+.metrics{display:flex;flex-direction:column;gap:.6rem}
+.mc{display:flex;align-items:center;gap:1.2rem;padding:1.3rem 1.5rem;background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);transition:all .25s}
+.mc:hover{transform:translateX(4px);border-color:var(--accent);box-shadow:0 2px 12px var(--accent-glow)}
+.mc:nth-child(2){margin-left:.8rem}
+.mc:nth-child(3){margin-left:1.6rem}
+.mc:nth-child(4){margin-left:2.4rem}
+.mc-n{font-size:1.6rem;font-weight:800;letter-spacing:-.03em;color:var(--ink);white-space:nowrap;min-width:70px;font-variant-numeric:tabular-nums}
+.mc-n span{color:var(--accent)}
+.mc-l{font-size:.78rem;color:var(--muted);line-height:1.5}
+
+/* Values */
+.vals-head{margin-bottom:2rem}
+.vals-head h3{font-size:clamp(1.5rem,2.3vw,2.1rem);font-weight:800;letter-spacing:-.03em;color:var(--ink)}
+.vals-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.vi{background:var(--bg);padding:2rem 1.6rem;position:relative;overflow:hidden;transition:all .3s}
+.vi:hover{background:var(--accent)}
+.vi:hover .vi-title,.vi:hover .vi-desc{color:#fff}
+.vi:hover .vi-icon{background:rgba(255,255,255,.2);border-color:rgba(255,255,255,.25)}
+.vi-n{font-size:3rem;font-weight:800;letter-spacing:-.05em;color:var(--line);position:absolute;top:.5rem;right:.8rem;line-height:1;transition:color .3s}
+.vi:hover .vi-n{color:rgba(255,255,255,.12)}
+.vi-icon{width:40px;height:40px;background:var(--accent-light);border:1px solid rgba(29,78,216,.1);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;margin-bottom:.9rem;transition:all .3s}
+.vi-title{font-weight:700;font-size:.92rem;margin-bottom:.4rem;color:var(--ink);transition:color .3s}
+.vi-desc{font-size:.78rem;color:var(--muted);line-height:1.65;font-weight:500;transition:color .3s;text-align:justify}
+
+/* ========= SERVICES ========= */
+#services{padding:80px 5vw 60px;background:var(--bg)}
+.svc-inner{max-width:1260px;margin:0 auto}
+
+.svc-top{display:flex;justify-content:space-between;align-items:flex-end;gap:3rem;margin-bottom:3rem}
+.st-left .eyebrow{margin-bottom:.8rem}
+.st-title{font-size:clamp(2rem,3.2vw,3rem);font-weight:800;letter-spacing:-.04em;line-height:1.12;color:var(--ink)}
+.st-title .ital{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:var(--accent)}
+.st-right{max-width:360px}
+.st-desc{font-size:.88rem;color:var(--muted);line-height:1.75;font-weight:500;margin-bottom:1.2rem;text-align:justify}
+
+/* Accordion services */
+.acc-list{border-top:1px solid var(--line)}
+.acc{border-bottom:1px solid var(--line)}
+.acc-head{display:flex;align-items:center;gap:1.5rem;padding:1.6rem 0;cursor:pointer;width:100%;background:none;border:none;text-align:left;font-family:inherit;color:inherit;transition:all .2s}
+.acc-head:hover{padding-left:.5rem}
+.acc-num{font-size:.68rem;font-weight:700;letter-spacing:.08em;color:var(--muted2);min-width:36px}
+.acc-icon{width:38px;height:38px;background:var(--accent-light);border:1px solid rgba(29,78,216,.1);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;transition:all .3s}
+.acc.open .acc-icon{background:var(--accent);border-color:var(--accent);color:#fff}
+.acc-title{flex:1;font-size:1.05rem;font-weight:700;letter-spacing:-.02em;color:var(--ink)}
+.acc-arrow{width:28px;height:28px;border-radius:50%;background:var(--bg2);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:.7rem;color:var(--muted);transition:all .3s;flex-shrink:0}
+.acc.open .acc-arrow{background:var(--accent);border-color:var(--accent);color:#fff;transform:rotate(180deg)}
+.acc-body{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s ease}
+.acc.open .acc-body{max-height:400px;padding-bottom:1.8rem}
+.acc-inner{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;padding-left:calc(36px + 1.5rem);margin-top:.2rem}
+.acc-desc{font-size:.85rem;color:var(--muted);line-height:1.75;font-weight:500;text-align:justify}
+.acc-tags{display:flex;flex-wrap:wrap;gap:.35rem;align-self:start}
+.acc-tag{font-size:.7rem;padding:.3rem .75rem;background:var(--bg2);border:1px solid var(--line);border-radius:6px;color:var(--muted);font-weight:500;transition:all .2s}
+.acc-tag:hover{background:var(--accent-light);border-color:rgba(29,78,216,.15);color:var(--accent)}
+.acc-cta{display:inline-flex;align-items:center;gap:.3rem;font-size:.78rem;font-weight:600;color:var(--accent);text-decoration:none;margin-top:.8rem;cursor:pointer;transition:gap .2s}
+.acc-cta:hover{gap:.6rem}
+
+/* CTA */
+.cta-strip{background:var(--ink);border-radius:14px;padding:3rem 3.5rem;display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center;position:relative;overflow:hidden;margin-top:3rem}
+.cta-strip::before{content:'';position:absolute;width:350px;height:350px;background:radial-gradient(circle,rgba(29,78,216,.2) 0%,transparent 70%);top:-80px;right:180px;pointer-events:none}
+.cs-t{font-size:clamp(1.4rem,2.2vw,2rem);font-weight:800;letter-spacing:-.03em;color:#fff;line-height:1.2}
+.cs-t .ital{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:rgba(255,255,255,.7)}
+.cs-s{font-size:.85rem;color:rgba(255,255,255,.55);margin-top:.5rem;font-weight:500}
+.btn-white{background:#fff;color:var(--ink);padding:.85rem 2rem;border-radius:8px;font-weight:700;font-size:.86rem;border:none;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:.4rem;transition:all .2s;white-space:nowrap}
+.btn-white:hover{background:var(--accent-light);color:var(--accent);transform:translateY(-1px)}
+
+/* ========= CONTACT ========= */
+#contact{padding:80px 5vw 60px;background:var(--bg2)}
+.ct-inner{max-width:1260px;margin:0 auto;display:grid;grid-template-columns:1fr 1.5fr;gap:4.5rem;align-items:start}
+.ct-head{margin-bottom:1.8rem}
+.ct-title{font-size:clamp(1.8rem,2.8vw,2.6rem);font-weight:800;letter-spacing:-.04em;line-height:1.12;color:var(--ink);margin-bottom:.9rem}
+.ct-title .ital{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:var(--accent)}
+.ct-desc{font-size:.88rem;color:var(--muted);line-height:1.75;font-weight:500;text-align:justify}
+
+.ct-items{display:flex;flex-direction:column;gap:.55rem}
+.ci{display:flex;align-items:center;gap:1rem;padding:1rem 1.2rem;border-radius:var(--radius);border:1px solid var(--line);background:var(--bg);transition:all .2s}
+.ci:hover{border-color:var(--accent);background:var(--accent-light);transform:translateX(3px)}
+.ci-icon{width:36px;height:36px;background:var(--bg2);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0;border:1px solid var(--line);transition:all .2s}
+.ci:hover .ci-icon{background:var(--accent);border-color:var(--accent);color:#fff}
+.ci-label{font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;font-weight:600}
+.ci-val{font-size:.84rem;font-weight:600;color:var(--ink)}
+
+/* Form */
+.form-card{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:2.2rem}
+.form-h{font-size:1.2rem;font-weight:800;letter-spacing:-.02em;margin-bottom:.25rem;color:var(--ink)}
+.form-s{font-size:.78rem;color:var(--muted);margin-bottom:1.6rem;font-weight:500}
+.form-g{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+.fg{display:flex;flex-direction:column;gap:.3rem;margin-bottom:.55rem}
+.fg label{font-size:.72rem;font-weight:600;color:var(--ink2);letter-spacing:.01em}
+.fg input,.fg select,.fg textarea{padding:.72rem .9rem;background:var(--bg2);border:1px solid var(--line);border-radius:7px;font-family:'Inter',sans-serif;font-size:.85rem;color:var(--ink);outline:none;transition:border-color .2s;width:100%}
+.fg input::placeholder,.fg textarea::placeholder{color:var(--muted2)}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--accent);background:var(--bg)}
+.fg select{color:var(--muted)}
+.fg textarea{resize:vertical;min-height:90px}
+.fg-full{grid-column:1/-1}
+.form-btn{width:100%;padding:.9rem;background:var(--accent);color:#fff;border:none;border-radius:8px;font-family:'Inter',sans-serif;font-size:.88rem;font-weight:700;cursor:pointer;transition:all .2s}
+.form-btn:hover{background:var(--accent2);transform:translateY(-1px);box-shadow:0 6px 20px rgba(29,78,216,.2)}
+.form-note{font-size:.68rem;color:var(--muted);text-align:center;margin-top:.6rem}
+
+.fg input.err,.fg select.err,.fg textarea.err{border-color:var(--red);background:#fef2f2}
+.fg .err-msg{font-size:.65rem;color:var(--red);margin-top:.15rem;display:none}
+.fg .err-msg.show{display:block}
+.form-btn:disabled{opacity:.6;cursor:not-allowed;transform:none!important;box-shadow:none!important}
+.ok-box{display:none;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:12px;padding:2.2rem;text-align:center}
+.ok-box h4{font-size:1rem;font-weight:800;color:var(--green);margin:.8rem 0 .3rem}
+.ok-box p{font-size:.85rem;color:var(--muted);font-weight:500}
+
+/* FOOTER */
+footer{background:var(--ink);padding:2.2rem 5vw 1.6rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.2rem}
+.ft-bottom{width:100%;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,.08);margin-top:.8rem;padding-top:1rem}
+.fl-brand{font-weight:800;font-size:1.1rem;letter-spacing:-.03em;color:#fff}
+.fl-brand span{color:var(--accent2)}
+footer p{font-size:.75rem;color:rgba(255,255,255,.4)}
+.fl-links{display:flex;gap:1.5rem}
+.fl-links a{font-size:.75rem;color:rgba(255,255,255,.4);text-decoration:none;transition:color .2s;cursor:pointer}
+.fl-links a:hover{color:#fff}
+.fl-social{display:flex;gap:1rem}
+.fl-social a{width:32px;height:32px;border-radius:6px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:.8rem;color:rgba(255,255,255,.5);transition:all .2s}
+.fl-social a:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+.fl-legal{display:flex;gap:1rem;margin-top:.3rem}
+.fl-legal a{font-size:.68rem;color:rgba(255,255,255,.3);text-decoration:none;transition:color .2s}
+.fl-legal a:hover{color:rgba(255,255,255,.7)}
+
+/* TIMELINE */
+.timeline-section{padding:60px 5vw;background:var(--bg);border-top:1px solid var(--line)}
+.timeline-inner{max-width:1260px;margin:0 auto}
+.timeline-head{text-align:center;margin-bottom:3.5rem}
+.timeline-track{position:relative;padding:1rem 0}
+.timeline-track::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:2px;background:var(--line);transform:translateX(-50%)}
+.tl-item{position:relative;display:flex;align-items:center;margin-bottom:2.5rem}
+.tl-item:last-child{margin-bottom:0}
+.tl-item:nth-child(odd){justify-content:flex-start;padding-right:calc(50% + 2.5rem)}
+.tl-item:nth-child(even){justify-content:flex-end;padding-left:calc(50% + 2.5rem)}
+.tl-dot{position:absolute;left:50%;top:50%;width:16px;height:16px;border-radius:50%;background:var(--accent);border:3px solid var(--bg);box-shadow:0 0 0 2px var(--accent),0 0 12px rgba(29,78,216,.3);transform:translate(-50%,-50%);z-index:2;transition:all .3s}
+.tl-item:hover .tl-dot{transform:translate(-50%,-50%) scale(1.3);box-shadow:0 0 0 3px var(--accent),0 0 20px rgba(29,78,216,.4)}
+.tl-card{background:var(--bg2);border:1px solid var(--line);border-radius:var(--radius);padding:1.4rem 1.6rem;width:100%;position:relative;transition:all .3s}
+.tl-card:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 8px 24px var(--accent-glow)}
+.tl-year{display:inline-block;font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.25rem .7rem;border-radius:4px;background:var(--accent);color:#fff;margin-bottom:.6rem}
+.tl-title{font-size:.95rem;font-weight:800;color:var(--ink);letter-spacing:-.02em;margin-bottom:.3rem}
+.tl-desc{font-size:.8rem;color:var(--muted);line-height:1.7;font-weight:500;text-align:justify}
+@media(max-width:700px){
+  .timeline-track::before{left:20px}
+  .tl-item:nth-child(odd),.tl-item:nth-child(even){justify-content:flex-start;padding-right:0;padding-left:3.2rem}
+  .tl-dot{left:20px}
+}
+
+/* CLIENT LOGOS */
+.logos-strip{padding:2.5rem 5vw;background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.logos-inner{max-width:1260px;margin:0 auto;text-align:center}
+.logos-label{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2);margin-bottom:1.5rem}
+.logos-row{display:flex;justify-content:center;align-items:center;gap:3rem;flex-wrap:wrap}
+.logo-item{font-size:1.1rem;font-weight:800;color:var(--muted2);letter-spacing:-.02em;opacity:.5;transition:opacity .3s;cursor:default}
+.logo-item:hover{opacity:1;color:var(--accent)}
+
+/* CASE STUDIES */
+.cases-section{padding:60px 5vw;background:var(--bg2);border-top:1px solid var(--line)}
+.cases-inner{max-width:1260px;margin:0 auto}
+.cases-head{text-align:center;margin-bottom:3rem}
+.cases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.case-card{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:all .3s}
+.case-card:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 8px 24px var(--accent-glow)}
+.case-banner{height:8px;width:100%}
+.case-body{padding:1.6rem}
+.case-tag{display:inline-block;font-size:.65rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:.25rem .7rem;border-radius:4px;background:var(--accent-light);color:var(--accent);margin-bottom:.8rem}
+.case-title{font-size:1rem;font-weight:800;color:var(--ink);margin-bottom:.5rem;letter-spacing:-.02em}
+.case-desc{font-size:.82rem;color:var(--muted);line-height:1.7;margin-bottom:1rem;text-align:justify}
+.case-stats{display:flex;gap:1.5rem}
+.case-stat-n{font-size:1.2rem;font-weight:800;color:var(--accent)}
+.case-stat-l{font-size:.65rem;color:var(--muted);font-weight:500}
+
+/* HERO ILLUSTRATION */
+.hero-illust{position:relative;width:100%;min-height:360px}
+.illust-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;height:100%}
+.illust-card{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:1.4rem;box-shadow:0 4px 20px rgba(0,0,0,.04);transition:all .3s;animation:floatUp 3s ease-in-out infinite alternate}
+.illust-card:nth-child(2){animation-delay:.5s}
+.illust-card:nth-child(3){animation-delay:1s}
+.illust-card:nth-child(4){animation-delay:1.5s}
+.illust-card:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 8px 30px var(--accent-glow)}
+@keyframes floatUp{0%{transform:translateY(0)}100%{transform:translateY(-8px)}}
+.ic-icon{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:.7rem}
+.ic-icon-1{background:#eff3ff;color:var(--accent)}
+.ic-icon-2{background:#ecfdf5;color:var(--green)}
+.ic-icon-3{background:#fef3c7;color:#d97706}
+.ic-icon-4{background:#fce7f3;color:#db2777}
+.ic-label{font-size:.72rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.3rem}
+.ic-val{font-size:1.3rem;font-weight:800;color:var(--ink);letter-spacing:-.03em}
+.ic-bar{height:4px;border-radius:2px;background:var(--line);margin-top:.7rem;overflow:hidden}
+.ic-bar-fill{height:100%;border-radius:2px;animation:barGrow 2s ease forwards}
+@keyframes barGrow{from{width:0}to{width:var(--w)}}
+.ic-bar-1{background:var(--accent)}
+.ic-bar-2{background:var(--green)}
+.ic-bar-3{background:#d97706}
+.ic-bar-4{background:#db2777}
+
+/* SERVICE DETAIL PAGES */
+.svc-detail{padding:80px 5vw 60px;background:var(--bg)}
+.svc-detail-inner{max-width:900px;margin:0 auto}
+.svc-detail-back{display:inline-flex;align-items:center;gap:.4rem;font-size:.82rem;font-weight:600;color:var(--accent);text-decoration:none;cursor:pointer;margin-bottom:2rem;transition:gap .2s}
+.svc-detail-back:hover{gap:.7rem}
+.svc-detail-badge{display:inline-block;font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.3rem .8rem;border-radius:4px;background:var(--accent-light);color:var(--accent);margin-bottom:1rem}
+.svc-detail h2{font-size:clamp(1.8rem,2.8vw,2.4rem);font-weight:800;letter-spacing:-.04em;color:var(--ink);margin-bottom:1rem}
+.svc-detail h2 .ital{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:var(--accent)}
+.svc-detail-desc{font-size:.92rem;color:var(--muted);line-height:1.8;margin-bottom:2rem;font-weight:500;text-align:justify}
+.svc-features{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:2.5rem}
+.svc-feat{display:flex;gap:.8rem;padding:1.2rem;background:var(--bg2);border:1px solid var(--line);border-radius:var(--radius);transition:all .2s}
+.svc-feat:hover{border-color:var(--accent);background:var(--accent-light)}
+.svc-feat-icon{width:36px;height:36px;background:var(--accent-light);border:1px solid rgba(29,78,216,.1);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0}
+.svc-feat:hover .svc-feat-icon{background:var(--accent);color:#fff;border-color:var(--accent)}
+.svc-feat-title{font-size:.82rem;font-weight:700;color:var(--ink);margin-bottom:.15rem}
+.svc-feat-desc{font-size:.74rem;color:var(--muted);line-height:1.5}
+
+/* ANIMATIONS */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.reveal.on{opacity:1;transform:none}
+.rl{opacity:0;transform:translateX(-20px);transition:opacity .6s ease,transform .6s ease}
+.rl.on{opacity:1;transform:none}
+.rr{opacity:0;transform:translateX(20px);transition:opacity .6s ease,transform .6s ease}
+.rr.on{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+
+/* RESPONSIVE */
+@media(max-width:1100px){
+  .hero-grid{grid-template-columns:1fr}.hero-illust{display:none}
+  .stats-row{grid-template-columns:1fr 1fr}
+  .ab-hero{grid-template-columns:1fr;gap:2.5rem}.mc:nth-child(n){margin-left:0}
+  .vals-grid{grid-template-columns:1fr 1fr}
+  .svc-top{flex-direction:column;align-items:flex-start}.acc-inner{grid-template-columns:1fr}
+  .ct-inner{grid-template-columns:1fr;gap:2.5rem}
+  .cta-strip{grid-template-columns:1fr;gap:1.5rem}
+  .testi-grid{grid-template-columns:1fr 1fr}
+  .cases-grid{grid-template-columns:1fr 1fr}
+  .svc-features{grid-template-columns:1fr}
+}
+@media(max-width:700px){
+  nav{padding:0 4vw}
+  .nav-links{display:none;position:absolute;top:64px;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--line);flex-direction:column;padding:1.2rem 4vw;gap:1rem}
+  .nav-links.open{display:flex}
+  .ham{display:flex}
+  .stats-row{grid-template-columns:1fr 1fr}
+  .vals-grid{grid-template-columns:1fr}
+  .acc-inner{grid-template-columns:1fr}
+  .form-g{grid-template-columns:1fr}
+  .cta-strip{padding:2rem 1.5rem}
+  .fl-links{display:none}
+  .testi-grid{grid-template-columns:1fr}
+  .cases-grid{grid-template-columns:1fr}
+  .illust-grid{grid-template-columns:1fr 1fr}
+  .logos-row{gap:1.5rem}
+  .svc-features{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body style="opacity:0;transition:opacity .3s">
+<a href="#home" class="skip-link" onclick="go('home');return false">Skip to main content</a>
+
+<!-- NAV -->
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <a class="nav-logo" href="javascript:void(0)" onclick="go('home');return false" aria-label="OfficeHaven Home">Office<span>Haven</span></a>
+  <ul class="nav-links" id="navL" role="menubar">
+    <li><a href="javascript:void(0)" onclick="go('home');return false" data-p="home" class="active">Home</a></li>
+    <li><a href="javascript:void(0)" onclick="go('about');return false" data-p="about">About</a></li>
+    <li><a href="javascript:void(0)" onclick="go('services');return false" data-p="services">Services</a></li>
+    <li><a href="javascript:void(0)" onclick="go('contact');return false" data-p="contact" class="nav-btn">Get in Touch</a></li>
+  </ul>
+  <button class="ham" id="ham" onclick="toggleNav()" aria-label="Toggle navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- ======== HOME ======== -->
+<main class="page" id="home" role="main">
+  <div class="home-inner">
+    <div class="hero-grid">
+      <div>
+        <div class="badge" role="status"><span class="badge-dot"></span> Technology Solutions Across India</div>
+        <h1 class="hero-title">
+          <span class="ital">Infrastructure</span>, Hardware<br/>& Development Solutions
+          <span class="sub-line">IT infrastructure, hardware, custom software & product development for every business</span>
+        </h1>
+        <p class="hero-desc">OfficeHaven is your end-to-end technology partner — from IT infrastructure setup and hardware procurement to custom software development and full-cycle product engineering. We help businesses build, scale, and succeed.</p>
+        <div class="hero-acts">
+          <a href="javascript:void(0)" onclick="go('services');return false" class="btn-primary">Explore Solutions &#8594;</a>
+          <a href="javascript:void(0)" onclick="go('contact');return false" class="btn-ghost">Get a Quote</a>
+        </div>
+        <div class="hero-chips">
+          <span class="chip">Infrastructure Setup</span>
+          <span class="chip">Cloud & Networking</span>
+          <span class="chip">IT Hardware</span>
+          <span class="chip">Software Development</span>
+          <span class="chip">Product Development</span>
+          <span class="chip">Workspace Solutions</span>
+        </div>
+      </div>
+      <div class="hero-illust rr">
+        <div class="illust-grid">
+          <div class="illust-card">
+            <div class="ic-icon ic-icon-1">&#9736;</div>
+            <div class="ic-label">Infrastructure</div>
+            <div class="ic-val">100+ Deployments</div>
+            <div class="ic-bar"><div class="ic-bar-fill ic-bar-1" style="--w:85%"></div></div>
+          </div>
+          <div class="illust-card">
+            <div class="ic-icon ic-icon-2">&#9783;</div>
+            <div class="ic-label">Hardware Units</div>
+            <div class="ic-val">5,000+ Delivered</div>
+            <div class="ic-bar"><div class="ic-bar-fill ic-bar-2" style="--w:92%"></div></div>
+          </div>
+          <div class="illust-card">
+            <div class="ic-icon ic-icon-3">&#9998;</div>
+            <div class="ic-label">Software Projects</div>
+            <div class="ic-val">150+ Built</div>
+            <div class="ic-bar"><div class="ic-bar-fill ic-bar-3" style="--w:78%"></div></div>
+          </div>
+          <div class="illust-card">
+            <div class="ic-icon ic-icon-4">&#9881;</div>
+            <div class="ic-label">Products Launched</div>
+            <div class="ic-val">40+ Live</div>
+            <div class="ic-bar"><div class="ic-bar-fill ic-bar-4" style="--w:70%"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="stats-row">
+      <div class="st"><div class="st-num"><span id="n1">0</span><sup>+</sup></div><div class="st-lbl">Infrastructure Deployments</div></div>
+      <div class="st"><div class="st-num"><span id="n2">0</span><sup>+</sup></div><div class="st-lbl">Hardware Units Delivered</div></div>
+      <div class="st"><div class="st-num"><span id="n3">0</span><sup>+</sup></div><div class="st-lbl">Software Projects Built</div></div>
+      <div class="st"><div class="st-num"><span id="n4">0</span><sup>+</sup></div><div class="st-lbl">Products Launched</div></div>
+    </div>
+    <!-- Client Logos -->
+    <div class="logos-strip">
+      <div class="logos-inner">
+        <div class="logos-label">Trusted by businesses across industries</div>
+        <div class="logos-row">
+          <a class="logo-item" href="https://absolutedata.ai" target="_blank" rel="noopener noreferrer" style="text-decoration:none">AbsoluteData</a>
+          <a class="logo-item" href="https://theindex.company" target="_blank" rel="noopener noreferrer" style="text-decoration:none">The Index Company</a>
+          <a class="logo-item" href="https://meradhan.co" target="_blank" rel="noopener noreferrer" style="text-decoration:none">MeraDhan</a>
+          <a class="logo-item" href="https://www.theedpsych.com" target="_blank" rel="noopener noreferrer" style="text-decoration:none">The Ed Psych Practice</a>
+        </div>
+      </div>
+    </div>
+    <!-- Timeline -->
+    <div class="timeline-section">
+      <div class="timeline-inner">
+        <div class="timeline-head">
+          <div class="eyebrow">Our Journey</div>
+          <h3 class="sec-title" style="font-size:clamp(1.5rem,2.3vw,2.1rem)">Milestones that <span class="ital">shaped us</span></h3>
+        </div>
+        <div class="timeline-track">
+          <div class="tl-item reveal d1">
+            <div class="tl-dot"></div>
+            <div class="tl-card">
+              <div class="tl-year">2019</div>
+              <div class="tl-title">OfficeHaven Founded in Chennai</div>
+              <p class="tl-desc">Started with a vision to make technology accessible for businesses of all sizes — beginning with workspace solutions and IT hardware.</p>
+            </div>
+          </div>
+          <div class="tl-item reveal d2">
+            <div class="tl-dot"></div>
+            <div class="tl-card">
+              <div class="tl-year">2020</div>
+              <div class="tl-title">1,000th Hardware Unit Delivered</div>
+              <p class="tl-desc">Crossed the milestone of delivering 1,000 refurbished IT hardware units to businesses across Tamil Nadu — desktops, laptops, and peripherals.</p>
+            </div>
+          </div>
+          <div class="tl-item reveal d3">
+            <div class="tl-dot"></div>
+            <div class="tl-card">
+              <div class="tl-year">2021</div>
+              <div class="tl-title">Launched Software Development Division</div>
+              <p class="tl-desc">Expanded into custom software development — web apps, mobile apps, and enterprise solutions — to serve our growing client base end-to-end.</p>
+            </div>
+          </div>
+          <div class="tl-item reveal d1">
+            <div class="tl-dot"></div>
+            <div class="tl-card">
+              <div class="tl-year">2022</div>
+              <div class="tl-title">Infrastructure & Cloud Practice Established</div>
+              <p class="tl-desc">Built a dedicated infrastructure team for server setup, cloud migration, and network architecture — completing 50+ deployments in the first year.</p>
+            </div>
+          </div>
+          <div class="tl-item reveal d2">
+            <div class="tl-dot"></div>
+            <div class="tl-card">
+              <div class="tl-year">2023</div>
+              <div class="tl-title">Product Development Wing Goes Live</div>
+              <p class="tl-desc">Launched end-to-end product engineering — from ideation and UI/UX to MVP build and market launch. First SaaS product shipped within 4 months.</p>
+            </div>
+          </div>
+          <div class="tl-item reveal d3">
+            <div class="tl-dot"></div>
+            <div class="tl-card">
+              <div class="tl-year">2025</div>
+              <div class="tl-title">5,000+ Hardware Units &bull; 150+ Software Projects</div>
+              <p class="tl-desc">Today, OfficeHaven serves clients across India with infrastructure, hardware, software, and product development — all under one roof.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- ======== ABOUT ======== -->
+<div class="page" id="about">
+  <div class="about-inner">
+    <div class="ab-hero">
+      <div class="rl">
+        <div class="eyebrow">About Us</div>
+        <h2 class="sec-title">Building technology that <span class="ital">powers businesses</span></h2>
+        <p class="ab-body">OfficeHaven is a full-spectrum technology partner offering <strong>infrastructure solutions</strong>, <strong>IT hardware</strong>, <strong>custom software development</strong>, and <strong>product engineering</strong> — all under one roof.</p>
+        <p class="ab-body">Our <strong>Infrastructure</strong> team handles server setup, cloud migration, and network architecture. Our <strong>Hardware</strong> division provides refurbished and new IT equipment on lease or purchase — desktops, laptops, servers, and peripherals.</p>
+        <p class="ab-body">On the development side, our <strong>Software Development</strong> team builds web apps, mobile apps, GenAI-powered solutions, and enterprise tools tailored to your business. Our <strong>Product Development</strong> practice takes ideas from concept to market-ready product with UI/UX design, MVP builds, and launch support.</p>
+        <p class="ab-body">Whether you're a startup needing your first infrastructure stack, an enterprise scaling hardware across offices, or a business launching a new digital product — OfficeHaven delivers.</p>
+        <div style="margin-top:1.5rem"><a href="javascript:void(0)" onclick="go('contact');return false" class="btn-primary">Partner With Us &#8594;</a></div>
+      </div>
+      <div class="rr">
+        <div class="metrics">
+          <div class="mc"><div class="mc-n">100<span>+</span></div><div class="mc-l">Infrastructure deployments<br/>across cloud & on-premise</div></div>
+          <div class="mc"><div class="mc-n">5K<span>+</span></div><div class="mc-l">Hardware units delivered<br/>to businesses across India</div></div>
+          <div class="mc"><div class="mc-n">150<span>+</span></div><div class="mc-l">Software projects built<br/>from web apps to enterprise tools</div></div>
+          <div class="mc"><div class="mc-n">40<span>+</span></div><div class="mc-l">Products launched<br/>from ideation to market</div></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="vals-head reveal">
+        <div class="eyebrow">Our Principles</div>
+        <h3>What drives everything we do</h3>
+      </div>
+      <div class="vals-grid">
+        <div class="vi reveal d1"><div class="vi-n">01</div><div class="vi-icon">&#9736;</div><div class="vi-title">Robust Infrastructure</div><div class="vi-desc">Scalable server setups, cloud migration, and network architecture designed for reliability and performance.</div></div>
+        <div class="vi reveal d2"><div class="vi-n">02</div><div class="vi-icon">&#9783;</div><div class="vi-title">Reliable Hardware</div><div class="vi-desc">Quality-tested IT hardware — desktops, laptops, servers, and peripherals — available on lease or purchase.</div></div>
+        <div class="vi reveal d3"><div class="vi-n">03</div><div class="vi-icon">&#9998;</div><div class="vi-title">Custom Software</div><div class="vi-desc">Web apps, mobile apps, APIs, and enterprise solutions built with modern frameworks and agile processes.</div></div>
+        <div class="vi reveal d4"><div class="vi-n">04</div><div class="vi-icon">&#9881;</div><div class="vi-title">Product Engineering</div><div class="vi-desc">End-to-end product development — from ideation and UI/UX design to MVP build, launch, and iteration.</div></div>
+      </div>
+    </div>
+    <!-- Case Studies -->
+    <div class="cases-section">
+      <div class="cases-inner">
+        <div class="cases-head">
+          <div class="eyebrow">Case Studies</div>
+          <h3 class="sec-title" style="font-size:clamp(1.5rem,2.3vw,2.1rem)">Real results from <span class="ital">real partnerships</span></h3>
+        </div>
+        <div class="cases-grid">
+          <div class="case-card reveal d1">
+            <div class="case-banner" style="background:linear-gradient(90deg,var(--accent),var(--accent2))"></div>
+            <div class="case-body">
+              <div class="case-tag">Infrastructure</div>
+              <div class="case-title">Fintech Startup Migrates to Cloud</div>
+              <p class="case-desc">A growing fintech company needed to move from on-premise servers to AWS. OfficeHaven handled the full cloud migration, network setup, and security configuration with zero downtime.</p>
+              <div class="case-stats">
+                <div><div class="case-stat-n">0</div><div class="case-stat-l">Downtime</div></div>
+                <div><div class="case-stat-n">45%</div><div class="case-stat-l">Cost Reduced</div></div>
+                <div><div class="case-stat-n">3x</div><div class="case-stat-l">Faster Deploys</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="case-card reveal d2">
+            <div class="case-banner" style="background:linear-gradient(90deg,var(--green),#34d399)"></div>
+            <div class="case-body">
+              <div class="case-tag">Software Development</div>
+              <div class="case-title">Custom ERP for Manufacturing Firm</div>
+              <p class="case-desc">A mid-size manufacturer needed a custom ERP to replace spreadsheets. OfficeHaven built a full-stack web application with inventory, invoicing, and real-time reporting modules.</p>
+              <div class="case-stats">
+                <div><div class="case-stat-n">60%</div><div class="case-stat-l">Efficiency Gain</div></div>
+                <div><div class="case-stat-n">4mo</div><div class="case-stat-l">Delivery Time</div></div>
+                <div><div class="case-stat-n">200+</div><div class="case-stat-l">Daily Users</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="case-card reveal d3">
+            <div class="case-banner" style="background:linear-gradient(90deg,#d97706,#f59e0b)"></div>
+            <div class="case-body">
+              <div class="case-tag">Product + Hardware</div>
+              <div class="case-title">EdTech Product Built & Deployed</div>
+              <p class="case-desc">An education company partnered with OfficeHaven for end-to-end product development of their learning platform, plus hardware procurement for 30 lab setups across schools.</p>
+              <div class="case-stats">
+                <div><div class="case-stat-n">10K</div><div class="case-stat-l">Students</div></div>
+                <div><div class="case-stat-n">30</div><div class="case-stat-l">Lab Setups</div></div>
+                <div><div class="case-stat-n">40%</div><div class="case-stat-l">Cost Saved</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======== SERVICES ======== -->
+<div class="page" id="services">
+  <div class="svc-inner">
+    <div class="svc-top">
+      <div class="st-left rl">
+        <div class="eyebrow">Services</div>
+        <div class="st-title">Comprehensive <span class="ital">technology</span><br/>solutions</div>
+      </div>
+      <div class="st-right rr">
+        <p class="st-desc">From workspaces and IT hardware to software and product development — OfficeHaven is your one-stop partner for everything your business needs to launch, grow, and scale.</p>
+        <a href="javascript:void(0)" onclick="go('contact');return false" class="btn-primary">Talk to Us &#8594;</a>
+      </div>
+    </div>
+    <div class="acc-list">
+      <div class="acc open reveal d1">
+        <button class="acc-head" onclick="toggleAcc(this)">
+          <span class="acc-num">01</span>
+          <div class="acc-icon">&#9733;</div>
+          <span class="acc-title">Private Offices</span>
+          <span class="acc-arrow">&#9660;</span>
+        </button>
+        <div class="acc-body">
+          <div class="acc-inner">
+            <div>
+              <p class="acc-desc">Ideal for businesses needing dedicated, fully serviced office spaces, complete with high-speed internet, 24/7 access, and security. Fully furnished and ready to move in from day one.</p>
+              <a class="acc-cta" onclick="go('svc-private');return false">Learn more &#8594;</a>
+            </div>
+            <div class="acc-tags"><span class="acc-tag">Dedicated Space</span><span class="acc-tag">24/7 Access</span><span class="acc-tag">High-Speed WiFi</span><span class="acc-tag">Furnished</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="acc reveal d2">
+        <button class="acc-head" onclick="toggleAcc(this)">
+          <span class="acc-num">02</span>
+          <div class="acc-icon">&#9652;</div>
+          <span class="acc-title">Coworking Spaces</span>
+          <span class="acc-arrow">&#9660;</span>
+        </button>
+        <div class="acc-body">
+          <div class="acc-inner">
+            <div>
+              <p class="acc-desc">Perfect for freelancers, remote workers, and small teams, our coworking spaces foster collaboration and innovation in a vibrant professional setting. Flexible plans from daily to monthly.</p>
+              <a class="acc-cta" onclick="go('svc-cowork');return false">Learn more &#8594;</a>
+            </div>
+            <div class="acc-tags"><span class="acc-tag">Flexible Desks</span><span class="acc-tag">Networking</span><span class="acc-tag">Community</span><span class="acc-tag">Affordable</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="acc reveal d3">
+        <button class="acc-head" onclick="toggleAcc(this)">
+          <span class="acc-num">03</span>
+          <div class="acc-icon">&#8767;</div>
+          <span class="acc-title">Meeting Rooms</span>
+          <span class="acc-arrow">&#9660;</span>
+        </button>
+        <div class="acc-body">
+          <div class="acc-inner">
+            <div>
+              <p class="acc-desc">Fully equipped meeting rooms with advanced video conferencing capabilities and modern amenities for seamless business discussions. Book by the hour for client meetings, team huddles, or presentations.</p>
+              <a class="acc-cta" onclick="go('svc-meeting');return false">Learn more &#8594;</a>
+            </div>
+            <div class="acc-tags"><span class="acc-tag">Video Conferencing</span><span class="acc-tag">Whiteboard</span><span class="acc-tag">Projector</span><span class="acc-tag">Hourly Booking</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="acc reveal d1">
+        <button class="acc-head" onclick="toggleAcc(this)">
+          <span class="acc-num">04</span>
+          <div class="acc-icon">&#9889;</div>
+          <span class="acc-title">Virtual Offices</span>
+          <span class="acc-arrow">&#9660;</span>
+        </button>
+        <div class="acc-body">
+          <div class="acc-inner">
+            <div>
+              <p class="acc-desc">Enhance your business presence with a prestigious address, mail handling, and call forwarding services without the need for a physical office. A professional business image without the overhead of maintaining a physical space.</p>
+              <a class="acc-cta" onclick="go('svc-virtual');return false">Learn more &#8594;</a>
+            </div>
+            <div class="acc-tags"><span class="acc-tag">Business Address</span><span class="acc-tag">Mail Handling</span><span class="acc-tag">Call Forwarding</span><span class="acc-tag">Professional Image</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="acc reveal d2">
+        <button class="acc-head" onclick="toggleAcc(this)">
+          <span class="acc-num">05</span>
+          <div class="acc-icon">&#9783;</div>
+          <span class="acc-title">Refurbished IT Hardware</span>
+          <span class="acc-arrow">&#9660;</span>
+        </button>
+        <div class="acc-body">
+          <div class="acc-inner">
+            <div>
+              <p class="acc-desc">We offer a wide range of refurbished PC hardware at affordable prices. Our carefully inspected devices deliver top-notch performance, ensuring reliability without the high cost. These systems are ideal for businesses and individuals looking for cost-effective computer solutions.</p>
+              <a class="acc-cta" onclick="go('svc-hardware');return false">Learn more &#8594;</a>
+            </div>
+            <div class="acc-tags"><span class="acc-tag">Desktops</span><span class="acc-tag">Laptops</span><span class="acc-tag">Lease Options</span><span class="acc-tag">Quality Tested</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="acc reveal d3">
+        <button class="acc-head" onclick="toggleAcc(this)">
+          <span class="acc-num">06</span>
+          <div class="acc-icon">&#9998;</div>
+          <span class="acc-title">Software Development</span>
+          <span class="acc-arrow">&#9660;</span>
+        </button>
+        <div class="acc-body">
+          <div class="acc-inner">
+            <div>
+              <p class="acc-desc">Custom software development services tailored to your business needs. From web and mobile applications to enterprise solutions, our team builds scalable, reliable software that drives growth and efficiency.</p>
+              <a class="acc-cta" onclick="go('svc-software');return false">Learn more &#8594;</a>
+            </div>
+            <div class="acc-tags"><span class="acc-tag">Web Apps</span><span class="acc-tag">Mobile Apps</span><span class="acc-tag">Enterprise Solutions</span><span class="acc-tag">API Development</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="acc reveal d1">
+        <button class="acc-head" onclick="toggleAcc(this)">
+          <span class="acc-num">07</span>
+          <div class="acc-icon">&#9881;</div>
+          <span class="acc-title">Product Development</span>
+          <span class="acc-arrow">&#9660;</span>
+        </button>
+        <div class="acc-body">
+          <div class="acc-inner">
+            <div>
+              <p class="acc-desc">End-to-end product development from ideation to launch. We help businesses design, prototype, build, and scale digital products with a focus on user experience, performance, and market fit.</p>
+              <a class="acc-cta" onclick="go('svc-product');return false">Learn more &#8594;</a>
+            </div>
+            <div class="acc-tags"><span class="acc-tag">Ideation</span><span class="acc-tag">UI/UX Design</span><span class="acc-tag">Prototyping</span><span class="acc-tag">Launch &amp; Scale</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="acc reveal d2">
+        <button class="acc-head" onclick="toggleAcc(this)">
+          <span class="acc-num">08</span>
+          <div class="acc-icon">&#9736;</div>
+          <span class="acc-title">Infrastructure & Hardware</span>
+          <span class="acc-arrow">&#9660;</span>
+        </button>
+        <div class="acc-body">
+          <div class="acc-inner">
+            <div>
+              <p class="acc-desc">Complete infrastructure and hardware solutions for businesses. From server setup and network configuration to hardware procurement and IT support, we provide the backbone your business needs to operate seamlessly.</p>
+              <a class="acc-cta" onclick="go('svc-infra');return false">Learn more &#8594;</a>
+            </div>
+            <div class="acc-tags"><span class="acc-tag">Servers</span><span class="acc-tag">Networking</span><span class="acc-tag">Cloud Setup</span><span class="acc-tag">IT Support</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="acc reveal d3">
+        <button class="acc-head" onclick="toggleAcc(this)">
+          <span class="acc-num">09</span>
+          <div class="acc-icon">&#9879;</div>
+          <span class="acc-title">Data Center</span>
+          <span class="acc-arrow">&#9660;</span>
+        </button>
+        <div class="acc-body">
+          <div class="acc-inner">
+            <div>
+              <p class="acc-desc">Our data center based in Vellore offers secure, high-availability hosting and colocation services. With redundant power, cooling, and network connectivity, we ensure your critical systems stay online around the clock.</p>
+              <a class="acc-cta" onclick="go('svc-datacenter');return false">Learn more &#8594;</a>
+            </div>
+            <div class="acc-tags"><span class="acc-tag">Colocation</span><span class="acc-tag">Managed Hosting</span><span class="acc-tag">Redundant Power</span><span class="acc-tag">Vellore Based</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cta-strip reveal">
+      <div>
+        <div class="cs-t">Ready to build, deploy, or scale?<br/><span class="ital">Let's find the right solution.</span></div>
+        <p class="cs-s">Schedule a consultation — explore our infrastructure, hardware, software, and product development services.</p>
+      </div>
+      <a href="javascript:void(0)" onclick="go('contact');return false" class="btn-white">Get Started &#8594;</a>
+    </div>
+  </div>
+</div>
+
+<!-- ======== SERVICE DETAIL PAGES ======== -->
+
+<!-- Private Offices -->
+<div class="page svc-detail" id="svc-private">
+  <div class="svc-detail-inner">
+    <a class="svc-detail-back" onclick="go('services');return false">&#8592; Back to Services</a>
+    <div class="svc-detail-badge">01 — Private Offices</div>
+    <h2>Dedicated spaces for <span class="ital">focused teams</span></h2>
+    <p class="svc-detail-desc">Our private offices are ideal for businesses needing dedicated, fully serviced spaces. Each office comes complete with high-speed internet, 24/7 access, round-the-clock security, and premium furnishings. Move in from day one with zero setup hassle.</p>
+    <div class="svc-features">
+      <div class="svc-feat"><div class="svc-feat-icon">&#9733;</div><div><div class="svc-feat-title">Fully Furnished</div><div class="svc-feat-desc">Ergonomic desks, chairs, storage, and meeting nooks included.</div></div></div>
+      <div class="svc-feat"><div class="svc-feat-icon">&#9889;</div><div><div class="svc-feat-title">High-Speed Internet</div><div class="svc-feat-desc">Dedicated fiber connection with backup for uninterrupted work.</div></div></div>
+      <div class="svc-feat"><div class="svc-feat-icon">&#9879;</div><div><div class="svc-feat-title">24/7 Secure Access</div><div class="svc-feat-desc">Biometric entry, CCTV surveillance, and on-site security staff.</div></div></div>
+      <div class="svc-feat"><div class="svc-feat-icon">&#9742;</div><div><div class="svc-feat-title">Reception & Mail</div><div class="svc-feat-desc">Professional reception desk handling visitors and mail on your behalf.</div></div></div>
+      <div class="svc-feat"><div class="svc-feat-icon">&#9878;</div><div><div class="svc-feat-title">Flexible Terms</div><div class="svc-feat-desc">Monthly, quarterly, or annual leases with easy scale-up options.</div></div></div>
+      <div class="svc-feat"><div class="svc-feat-icon">&#9783;</div><div><div class="svc-feat-title">Meeting Room Access</div><div class="svc-feat-desc">Complimentary hours in shared meeting and conference rooms.</div></div></div>
+    </div>
+    <a href="javascript:void(0)" onclick="go('contact');return false" class="btn-primary">Get a Quote &#8594;</a>
+  </div>
+</div>
+
+<!-- Coworking Spaces -->
+<div class="page svc-detail" id="svc-cowork">
+  <div class="svc-detail-inner">
+    <a class="svc-detail-back" onclick="go('services');return false">&#8592; Back to Services</a>
+    <div class="svc-detail-badge">02 — Coworking Spaces</div>
+    <h2>Collaborate in a <span class="ital">vibrant community</span></h2>
+    <p class="svc-detail-desc">Perfect for freelancers, remote workers, and small teams. Our coworking spaces foster collaboration and innovation in a vibrant professional setting with flexible plans from daily passes to monthly memberships.</p>
+    <div class="svc-features">
+      <div class="svc-feat"><div class="svc-feat-icon">&#9652;</div><div><div class="svc-feat-title">Flexible Desks</div><div class="svc-feat-desc">Hot desks and dedicated desks available based on your preference.</div></div></div>
+      <div class="svc-feat"><div class="svc-feat-icon">&#9733;</div><div><div class="svc-feat-title">Community Events</div><div class="svc-feat-desc">Regular networking sessions, workshops, and speaker events.</div></div></div>
+      <div class="svc-feat"><div class="svc-feat-icon">&#9889;</div><div><div class="svc-feat-title">High-Speed WiFi</div><div class="svc-feat-desc">Enterprise-grade internet across all coworking zones.</div></div></div>
+      <div class="svc-feat"><div class="svc-feat-icon">&#9878;</div><div><div class="svc-feat-title">Lounge & Pantry</div><div class="svc-feat-desc">Complimentary tea, coffee, and access to a fully stocked pantry.</div></div></div>
+      <div class="svc-feat"><div class="svc-feat-icon">&#9783;</div><div><div class="svc-feat-title">Print & Scan</div><div class="svc-feat-desc">Shared printing, scanning, and document services available on-site.</div></div></div>
+      <div class="svc-feat"><div class="svc-feat-icon">&#9742;</div><div><div class="svc-feat-title">Business Address</div><div class="svc-feat-desc">Use our premium address for your business registration and mail.</div></div></div>
+    </div>
+    <a href="javascript:void(0)" onclick="go('contact');return false" class="btn-primary">Join a Space &#8594;</a>
+  </div>
+</div>
+
+<!-- Meeting Rooms -->
+<div class="page svc-detail" id="svc-meeting">
+  <div class="svc-detail-inner">
+    <a class="svc-detail-back" onclick="go('services');return false">&#8592; Back to Services</a>
+    <div class="svc-detail-badge">03 — Meeting Rooms</div>
+    <h2>Professional spaces for <span class="ital">seamless meetings</span></h2>
+    <p class="svc-detail-desc">Fully equipped meeting rooms with advanced video conferencing capabilities, whiteboards, projectors, and modern amenities. Book by the hour for client meetings, team huddles, board presentations, or training sessions.</p>
+    <div class="svc-features">
+      <div class="svc-feat"><div class="svc-feat-icon">&#8767;</div><div><div class="svc-feat-title">Video Conferencing</div><div class="svc-feat-desc">4K displays, webcams, and premium audio for remote participants.</div></div></div>
+      <div class="svc-feat"><div class="svc-feat-icon">&#9783;</div><div><div class="svc-feat-title">Whiteboard & Projector</div><div class="svc-feat-desc">Interactive whiteboards and HD projectors in every room.</div></div></div>
+      <div class="svc-feat"><div class="svc-feat-icon">&#9733;</div><div><div class="svc-feat-title">Hourly Booking</div><div class="svc-feat-desc">Book rooms by the hour — no long-term commitments needed.</div></div></div>
+      <div class="svc-feat"><div class="svc-feat-icon">&#9742;</div><div><div class="svc-feat-title">Catering Available</div><div class="svc-feat-desc">Refreshments and catering for longer sessions and workshops.</div></div></div>
+      <div class="svc-feat"><div class="svc-feat-icon">&#9889;</div><div><div class="svc-feat-title">Capacity Options</div><div class="svc-feat-desc">Rooms for 4, 8, 16, or 30+ people based on your needs.</div></div></div>
+      <div class="svc-feat"><div class="svc-feat-icon">&#9879;</div><div><div class="svc-feat-title">Reception Support</div><div class="svc-feat-desc">Our team greets and guides your guests to the meeting room.</div></div></div>
+    </div>
+    <a href="javascript:void(0)" onclick="go('contact');return false" class="btn-primary">Book a Room &#8594;</a>
+  </div>
+</div>
+
+<!-- Virtual Offices -->
+<div class="page svc-detail" id="svc-virtual">
+  <div class="svc-detail-inner">
+    <a class="svc-detail-back" onclick="go('services');return false">&#8592; Back to Services</a>
+    <div class="svc-detail-badge">04 — Virtual Offices</div>
+    <h2>Professional presence <span class="ital">without the overhead</span></h2>
+    <p class="svc-detail-desc">Enhance your business presence with a prestigious address, mail handling, and call forwarding services — all without the need for a physical office. Ideal for remote teams and businesses that want a professional image.</p>
+    <div class="svc-features">
+      <div class="svc-feat"><div class="svc-feat-icon">&#9678;</div><div><div class="svc-feat-title">Business Address</div><div class="svc-feat-desc">Prestigious Chennai address for registration, GST, and branding.</div></div></div>
+      <div class="svc-feat"><div class="svc-feat-icon">&#9993;</div><div><div class="svc-feat-title">Mail Handling</div><div class="svc-feat-desc">We receive, sort, and forward your business mail and packages.</div></div></div>
+      <div class="svc-feat"><div class="svc-feat-icon">&#9742;</div><div><div class="svc-feat-title">Call Forwarding</div><div class="svc-feat-desc">Dedicated phone number with professional call answering service.</div></div></div>
+      <div class="svc-feat"><div class="svc-feat-icon">&#9733;</div><div><div class="svc-feat-title">Meeting Room Credits</div><div class="svc-feat-desc">Included hours to use physical meeting rooms when needed.</div></div></div>
+      <div class="svc-feat"><div class="svc-feat-icon">&#9879;</div><div><div class="svc-feat-title">GST Registration</div><div class="svc-feat-desc">Address valid for GST, company incorporation, and compliance.</div></div></div>
+      <div class="svc-feat"><div class="svc-feat-icon">&#9889;</div><div><div class="svc-feat-title">Instant Setup</div><div class="svc-feat-desc">Get started within 24 hours — no paperwork delays.</div></div></div>
+    </div>
+    <a href="javascript:void(0)" onclick="go('contact');return false" class="btn-primary">Get Started &#8594;</a>
+  </div>
+</div>
+
+<!-- Refurbished IT Hardware -->
+<div class="page svc-detail" id="svc-hardware">
+  <div class="svc-detail-inner">
+    <a class="svc-detail-back" onclick="go('services');return false">&#8592; Back to Services</a>
+    <div class="svc-detail-badge">05 — Refurbished IT Hardware</div>
+    <h2>Quality hardware at <span class="ital">affordable prices</span></h2>
+    <p class="svc-detail-desc">We offer a wide range of refurbished PC hardware — desktops, laptops, monitors, and peripherals. Every device is carefully inspected and tested to deliver top-notch performance without the premium price tag. Available for lease or purchase.</p>
+    <div class="svc-features">
+      <div class="svc-feat"><div class="svc-feat-icon">&#9783;</div><div><div class="svc-feat-title">Desktops & Laptops</div><div class="svc-feat-desc">Enterprise-grade machines from Dell, HP, Lenovo, and more.</div></div></div>
+      <div class="svc-feat"><div class="svc-feat-icon">&#9733;</div><div><div class="svc-feat-title">Quality Tested</div><div class="svc-feat-desc">Multi-point inspection ensures every device meets performance standards.</div></div></div>
+      <div class="svc-feat"><div class="svc-feat-icon">&#9878;</div><div><div class="svc-feat-title">Lease Options</div><div class="svc-feat-desc">Flexible leasing plans — pay monthly instead of upfront.</div></div></div>
+      <div class="svc-feat"><div class="svc-feat-icon">&#9881;</div><div><div class="svc-feat-title">Warranty Included</div><div class="svc-feat-desc">Every device comes with a warranty and technical support.</div></div></div>
+      <div class="svc-feat"><div class="svc-feat-icon">&#9889;</div><div><div class="svc-feat-title">Bulk Orders</div><div class="svc-feat-desc">Special pricing for businesses ordering 10+ units at once.</div></div></div>
+      <div class="svc-feat"><div class="svc-feat-icon">&#9742;</div><div><div class="svc-feat-title">On-Site Setup</div><div class="svc-feat-desc">We deliver, install, and configure hardware at your location.</div></div></div>
+    </div>
+    <a href="javascript:void(0)" onclick="go('contact');return false" class="btn-primary">Request Pricing &#8594;</a>
+  </div>
+</div>
+
+<!-- Software Development -->
+<div class="page svc-detail" id="svc-software">
+  <div class="svc-detail-inner">
+    <a class="svc-detail-back" onclick="go('services');return false">&#8592; Back to Services</a>
+    <div class="svc-detail-badge">06 — Software Development</div>
+    <h2>Custom software built for <span class="ital">your business</span></h2>
+    <p class="svc-detail-desc">From web and mobile applications to enterprise solutions, our development team builds scalable, reliable software tailored to your unique business needs. We follow agile methodologies to deliver on time, every time.</p>
+    <div class="svc-features">
+      <div class="svc-feat"><div class="svc-feat-icon">&#9998;</div><div><div class="svc-feat-title">Web Applications</div><div class="svc-feat-desc">Responsive, fast web apps using modern frameworks and best practices.</div></div></div>
+      <div class="svc-feat"><div class="svc-feat-icon">&#9889;</div><div><div class="svc-feat-title">Mobile Apps</div><div class="svc-feat-desc">Native and cross-platform apps for iOS and Android.</div></div></div>
+      <div class="svc-feat"><div class="svc-feat-icon">&#9881;</div><div><div class="svc-feat-title">API Development</div><div class="svc-feat-desc">RESTful and GraphQL APIs for seamless system integration.</div></div></div>
+      <div class="svc-feat"><div class="svc-feat-icon">&#9783;</div><div><div class="svc-feat-title">Enterprise Solutions</div><div class="svc-feat-desc">ERP, CRM, and custom tools for large-scale operations.</div></div></div>
+      <div class="svc-feat"><div class="svc-feat-icon">&#9733;</div><div><div class="svc-feat-title">Agile Process</div><div class="svc-feat-desc">Sprint-based development with regular demos and feedback loops.</div></div></div>
+      <div class="svc-feat"><div class="svc-feat-icon">&#9879;</div><div><div class="svc-feat-title">Post-Launch Support</div><div class="svc-feat-desc">Ongoing maintenance, updates, and performance monitoring.</div></div></div>
+    </div>
+    <a href="javascript:void(0)" onclick="go('contact');return false" class="btn-primary">Discuss Your Project &#8594;</a>
+  </div>
+</div>
+
+<!-- Product Development -->
+<div class="page svc-detail" id="svc-product">
+  <div class="svc-detail-inner">
+    <a class="svc-detail-back" onclick="go('services');return false">&#8592; Back to Services</a>
+    <div class="svc-detail-badge">07 — Product Development</div>
+    <h2>From idea to <span class="ital">market-ready product</span></h2>
+    <p class="svc-detail-desc">End-to-end product development from ideation to launch. We help businesses design, prototype, build, and scale digital products with a focus on user experience, performance, and market fit.</p>
+    <div class="svc-features">
+      <div class="svc-feat"><div class="svc-feat-icon">&#9881;</div><div><div class="svc-feat-title">Ideation & Strategy</div><div class="svc-feat-desc">Market research, competitive analysis, and product roadmapping.</div></div></div>
+      <div class="svc-feat"><div class="svc-feat-icon">&#9733;</div><div><div class="svc-feat-title">UI/UX Design</div><div class="svc-feat-desc">User-centered design with wireframes, prototypes, and usability testing.</div></div></div>
+      <div class="svc-feat"><div class="svc-feat-icon">&#9998;</div><div><div class="svc-feat-title">MVP Development</div><div class="svc-feat-desc">Rapid prototype to validate your idea before full-scale build.</div></div></div>
+      <div class="svc-feat"><div class="svc-feat-icon">&#9889;</div><div><div class="svc-feat-title">Full-Stack Build</div><div class="svc-feat-desc">Complete frontend and backend development with cloud deployment.</div></div></div>
+      <div class="svc-feat"><div class="svc-feat-icon">&#9878;</div><div><div class="svc-feat-title">Launch & Scale</div><div class="svc-feat-desc">Go-to-market support, analytics setup, and growth optimization.</div></div></div>
+      <div class="svc-feat"><div class="svc-feat-icon">&#9783;</div><div><div class="svc-feat-title">Iterate & Improve</div><div class="svc-feat-desc">Data-driven iterations based on user feedback and analytics.</div></div></div>
+    </div>
+    <a href="javascript:void(0)" onclick="go('contact');return false" class="btn-primary">Start Your Product &#8594;</a>
+  </div>
+</div>
+
+<!-- Infrastructure & Hardware -->
+<div class="page svc-detail" id="svc-infra">
+  <div class="svc-detail-inner">
+    <a class="svc-detail-back" onclick="go('services');return false">&#8592; Back to Services</a>
+    <div class="svc-detail-badge">08 — Infrastructure & Hardware</div>
+    <h2>The backbone your <span class="ital">business needs</span></h2>
+    <p class="svc-detail-desc">Complete infrastructure and hardware solutions — from server setup and network configuration to cloud migration and ongoing IT support. We provide the technical foundation your business needs to operate seamlessly.</p>
+    <div class="svc-features">
+      <div class="svc-feat"><div class="svc-feat-icon">&#9736;</div><div><div class="svc-feat-title">Server Setup</div><div class="svc-feat-desc">On-premise and cloud server configuration, optimization, and management.</div></div></div>
+      <div class="svc-feat"><div class="svc-feat-icon">&#9881;</div><div><div class="svc-feat-title">Network Configuration</div><div class="svc-feat-desc">Enterprise networking with firewalls, VPNs, and access control.</div></div></div>
+      <div class="svc-feat"><div class="svc-feat-icon">&#9889;</div><div><div class="svc-feat-title">Cloud Migration</div><div class="svc-feat-desc">Seamless migration to AWS, Azure, or GCP with zero downtime.</div></div></div>
+      <div class="svc-feat"><div class="svc-feat-icon">&#9783;</div><div><div class="svc-feat-title">Hardware Procurement</div><div class="svc-feat-desc">Source and deploy servers, switches, routers, and workstations.</div></div></div>
+      <div class="svc-feat"><div class="svc-feat-icon">&#9879;</div><div><div class="svc-feat-title">24/7 IT Support</div><div class="svc-feat-desc">Round-the-clock monitoring, troubleshooting, and incident response.</div></div></div>
+      <div class="svc-feat"><div class="svc-feat-icon">&#9733;</div><div><div class="svc-feat-title">Security & Compliance</div><div class="svc-feat-desc">Endpoint protection, backup solutions, and compliance audits.</div></div></div>
+    </div>
+    <a href="javascript:void(0)" onclick="go('contact');return false" class="btn-primary">Get Infrastructure Support &#8594;</a>
+  </div>
+</div>
+
+<!-- Data Center -->
+<div class="page svc-detail" id="svc-datacenter">
+  <div class="svc-detail-inner">
+    <a class="svc-detail-back" onclick="go('services');return false">&#8592; Back to Services</a>
+    <div class="svc-detail-badge">09 — Data Center</div>
+    <h2>Secure hosting from <span class="ital">our Vellore facility</span></h2>
+    <p class="svc-detail-desc">Our data center in Vellore provides enterprise-grade colocation, managed hosting, and dedicated server solutions. Built with redundant power, advanced cooling, and multi-carrier connectivity to keep your systems running 24/7.</p>
+    <div class="svc-features">
+      <div class="svc-feat"><div class="svc-feat-icon">&#9879;</div><div><div class="svc-feat-title">Colocation Services</div><div class="svc-feat-desc">Rack space with power, cooling, and physical security for your hardware.</div></div></div>
+      <div class="svc-feat"><div class="svc-feat-icon">&#9889;</div><div><div class="svc-feat-title">Redundant Power</div><div class="svc-feat-desc">UPS backup and diesel generators ensure uninterrupted uptime.</div></div></div>
+      <div class="svc-feat"><div class="svc-feat-icon">&#9736;</div><div><div class="svc-feat-title">Managed Hosting</div><div class="svc-feat-desc">Fully managed dedicated servers with OS, patching, and monitoring.</div></div></div>
+      <div class="svc-feat"><div class="svc-feat-icon">&#9881;</div><div><div class="svc-feat-title">Network Connectivity</div><div class="svc-feat-desc">Multi-carrier redundant internet with low-latency peering.</div></div></div>
+      <div class="svc-feat"><div class="svc-feat-icon">&#9733;</div><div><div class="svc-feat-title">Physical Security</div><div class="svc-feat-desc">Biometric access, CCTV surveillance, and 24/7 on-site staff.</div></div></div>
+      <div class="svc-feat"><div class="svc-feat-icon">&#9783;</div><div><div class="svc-feat-title">Disaster Recovery</div><div class="svc-feat-desc">Backup and DR solutions to protect your data and ensure business continuity.</div></div></div>
+    </div>
+    <a href="javascript:void(0)" onclick="go('contact');return false" class="btn-primary">Get Data Center Pricing &#8594;</a>
+  </div>
+</div>
+
+<!-- ======== CONTACT ======== -->
+<div class="page" id="contact">
+  <div class="ct-inner">
+    <div class="rl">
+      <div class="ct-head">
+        <div class="eyebrow">Contact Us</div>
+        <h2 class="ct-title">Let's discuss your <span class="ital">project needs</span></h2>
+        <p class="ct-desc">Fill out the form and our team will get back to you within 24 hours. Whether it's infrastructure, hardware, software, or product development — we're ready to help.</p>
+      </div>
+      <div class="ct-items">
+        <a href="mailto:info@officehaven.in" class="ci" style="text-decoration:none"><div class="ci-icon">&#9993;</div><div><div class="ci-label">Email</div><div class="ci-val">info@officehaven.in</div></div></a>
+        <a href="tel:+919944648615" class="ci" style="text-decoration:none"><div class="ci-icon">&#9742;</div><div><div class="ci-label">Phone</div><div class="ci-val">+91 9944648615</div></div></a>
+        <a href="tel:+919840638010" class="ci" style="text-decoration:none"><div class="ci-icon">&#9742;</div><div><div class="ci-label">Phone</div><div class="ci-val">+91 9840638010</div></div></a>
+        <div class="ci"><div class="ci-icon">&#9678;</div><div><div class="ci-label">Location</div><div class="ci-val">Flat 3B, Prasantham Apartments, 143 St Mary Road, Alwarpet, Chennai - 600018</div></div></div>
+      </div>
+    </div>
+    <div class="rr">
+      <div class="form-card" id="formCard">
+        <div class="form-h">Send us a message</div>
+        <div class="form-s">We'll respond within 24 hours. Your info stays private, always.</div>
+        <form class="form-g" id="contactForm" onsubmit="return submitForm(event)" novalidate>
+          <input type="hidden" name="_subject" value="New Contact Form Submission — OfficeHaven"/>
+          <input type="hidden" name="_captcha" value="false"/>
+          <input type="hidden" name="_template" value="table"/>
+          <div class="fg"><label for="fName">First Name</label><input id="fName" name="first_name" type="text" placeholder="John" required/><span class="err-msg" id="fNameErr">First name is required</span></div>
+          <div class="fg"><label for="lName">Last Name</label><input id="lName" name="last_name" type="text" placeholder="Doe" required/><span class="err-msg" id="lNameErr">Last name is required</span></div>
+          <div class="fg fg-full"><label for="fEmail">Email Address</label><input id="fEmail" name="email" type="email" placeholder="john@company.com" required/><span class="err-msg" id="fEmailErr">Valid email is required</span></div>
+          <div class="fg fg-full"><label for="fCompany">Company Name</label><input id="fCompany" name="company" type="text" placeholder="Your Company" required/><span class="err-msg" id="fCompanyErr">Company name is required</span></div>
+          <div class="fg fg-full">
+            <label for="fService">Service Interested In</label>
+            <select id="fService" name="service" required>
+              <option value="">Select a service...</option>
+              <option>Private Offices</option>
+              <option>Coworking Spaces</option>
+              <option>Meeting Rooms</option>
+              <option>Virtual Offices</option>
+              <option>Refurbished IT Hardware</option>
+              <option>Software Development</option>
+              <option>Product Development</option>
+              <option>Infrastructure & Hardware</option>
+              <option>Data Center</option>
+              <option>General Inquiry</option>
+            </select>
+            <span class="err-msg" id="fServiceErr">Please select a service</span>
+          </div>
+          <div class="fg fg-full"><label for="fMsg">Your Message</label><textarea id="fMsg" name="message" placeholder="Tell us about your project — infrastructure, hardware, software, or product needs..." required></textarea><span class="err-msg" id="fMsgErr">Message is required</span></div>
+          <div class="fg-full"><button type="submit" class="form-btn">Send Message &#8594;</button></div>
+        </form>
+        <p class="form-note">Your information is safe and never shared with third parties.</p>
+      </div>
+      <div class="ok-box" id="okBox">
+        <div style="font-size:2.2rem;color:var(--green)">&#10003;</div>
+        <h4>Message Sent Successfully!</h4>
+        <p>Thank you for reaching out. Our team will respond within 24 hours.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+  <div class="fl-brand">Office<span>Haven</span></div>
+  <div class="fl-links">
+    <a href="javascript:void(0)" onclick="go('home');return false">Home</a>
+    <a href="javascript:void(0)" onclick="go('about');return false">About</a>
+    <a href="javascript:void(0)" onclick="go('services');return false">Services</a>
+    <a href="javascript:void(0)" onclick="go('contact');return false">Contact</a>
+  </div>
+  <div class="fl-social">
+    <a href="javascript:void(0)" aria-label="LinkedIn" title="LinkedIn">in</a>
+  </div>
+  <div class="ft-bottom">
+    <p>&copy; <span id="cpYear"></span> OfficeHaven. All rights reserved.</p>
+    <div class="fl-legal">
+      <a href="javascript:void(0)">Privacy Policy</a>
+      <a href="javascript:void(0)">Terms and Conditions</a>
+      <a href="javascript:void(0)">Contact Us</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ---- Navigation ---- */
+let navigating=false;
+function go(id){
+  if(navigating)return;
+  const current=document.querySelector('.page.active.show');
+  if(current&&current.id!==id){
+    navigating=true;
+    current.classList.remove('show');
+    setTimeout(()=>{current.classList.remove('active');activate(id);navigating=false;},400);
+  }else{
+    activate(id);
+  }
+}
+function activate(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active','show'));
+  const pg=document.getElementById(id);
+  pg.classList.add('active');
+  requestAnimationFrame(()=>requestAnimationFrame(()=>pg.classList.add('show')));
+  document.querySelectorAll('[data-p]').forEach(a=>a.classList.toggle('active',a.dataset.p===id));
+  window.scrollTo({top:0,behavior:'instant'});
+  document.getElementById('navL').classList.remove('open');
+  document.getElementById('ham').setAttribute('aria-expanded','false');
+  setTimeout(checkReveal,80);
+  if(id==='home')startCounters();
+}
+
+function toggleNav(){
+  const nav=document.getElementById('navL');
+  const ham=document.getElementById('ham');
+  nav.classList.toggle('open');
+  ham.setAttribute('aria-expanded',nav.classList.contains('open'));
+}
+
+// Close mobile nav on outside click
+document.addEventListener('click',function(e){
+  const nav=document.getElementById('navL');
+  const ham=document.getElementById('ham');
+  if(nav.classList.contains('open')&&!nav.contains(e.target)&&!ham.contains(e.target)){
+    nav.classList.remove('open');
+    ham.setAttribute('aria-expanded','false');
+  }
+});
+
+/* ---- Scroll reveal ---- */
+function checkReveal(){
+  document.querySelectorAll('.reveal,.rl,.rr').forEach(el=>{
+    if(el.getBoundingClientRect().top<window.innerHeight-50)el.classList.add('on');
+  });
+}
+window.addEventListener('scroll',checkReveal);
+window.addEventListener('scroll',()=>document.getElementById('navbar').classList.toggle('scrolled',scrollY>10));
+
+/* ---- Counters (run only once) ---- */
+let countersRan=false;
+function countUp(el,target,dur){
+  let start=0,step=target/(dur/16);
+  const t=setInterval(()=>{start=Math.min(start+step,target);el.textContent=Math.floor(start);if(start>=target)clearInterval(t)},16);
+}
+function startCounters(){
+  if(countersRan)return;
+  countersRan=true;
+  countUp(document.getElementById('n1'),100,1200);
+  countUp(document.getElementById('n2'),5000,1800);
+  countUp(document.getElementById('n3'),150,1600);
+  countUp(document.getElementById('n4'),40,1400);
+}
+
+
+/* ---- Form validation & Formsubmit.co submit ---- */
+function submitForm(e){
+  e.preventDefault();
+  const fields=[
+    {id:'fName',err:'fNameErr',test:v=>v.trim().length>0},
+    {id:'lName',err:'lNameErr',test:v=>v.trim().length>0},
+    {id:'fEmail',err:'fEmailErr',test:v=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)},
+    {id:'fCompany',err:'fCompanyErr',test:v=>v.trim().length>0},
+    {id:'fService',err:'fServiceErr',test:v=>v!==''},
+    {id:'fMsg',err:'fMsgErr',test:v=>v.trim().length>0}
+  ];
+  let valid=true;
+  fields.forEach(f=>{
+    const el=document.getElementById(f.id);
+    const errEl=document.getElementById(f.err);
+    const ok=f.test(el.value);
+    el.classList.toggle('err',!ok);
+    errEl.classList.toggle('show',!ok);
+    if(!ok)valid=false;
+  });
+  if(!valid)return false;
+
+  const btn=document.querySelector('.form-btn');
+  btn.disabled=true;
+  btn.textContent='Sending...';
+
+  const formData=new FormData(document.getElementById('contactForm'));
+  fetch('https://formsubmit.co/ajax/info@officehaven.in',{method:'POST',body:formData})
+    .then(r=>r.json())
+    .then(data=>{
+      if(data.success==='true'||data.success===true){
+        document.getElementById('formCard').style.display='none';
+        document.getElementById('okBox').style.display='block';
+      }else{
+        btn.disabled=false;
+        btn.innerHTML='Send Message &#8594;';
+        alert('Something went wrong. Please try again.');
+      }
+    })
+    .catch(()=>{
+      btn.disabled=false;
+      btn.innerHTML='Send Message &#8594;';
+      alert('Network error. Please check your connection and try again.');
+    });
+  return false;
+}
+
+// Clear error styling on input
+document.querySelectorAll('#contactForm input,#contactForm select,#contactForm textarea').forEach(el=>{
+  el.addEventListener('input',function(){
+    this.classList.remove('err');
+    const errEl=this.parentElement.querySelector('.err-msg');
+    if(errEl)errEl.classList.remove('show');
+  });
+});
+
+/* ---- Accordion ---- */
+function toggleAcc(btn){
+  const acc=btn.parentElement;
+  const wasOpen=acc.classList.contains('open');
+  document.querySelectorAll('.acc.open').forEach(a=>a.classList.remove('open'));
+  if(!wasOpen)acc.classList.add('open');
+}
+
+/* ---- Init ---- */
+document.getElementById('cpYear').textContent=new Date().getFullYear();
+go('home');
+setTimeout(checkReveal,200);
+document.body.style.opacity='1';
+</script>
+</body>
+</html>
